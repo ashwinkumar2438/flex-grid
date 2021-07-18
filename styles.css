@@ -1,0 +1,84 @@
+html,body{
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+.main-container{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-flow:row nowrap;
+}
+@media screen and (max-width:800px){
+    .main-container{
+        flex-flow:column nowrap;
+    }
+}
+
+/** FORM CSS **/
+
+.form{
+    flex-basis:0;
+    padding:20px;
+    max-width:500px;
+    min-width:300px;
+    display:grid;
+    grid-gap:10px 20px;
+    grid-template-columns: max-content auto;
+    align-content: start;
+    align-items:center;
+    grid-template-areas: "heading heading";
+}
+.form>.heading{
+    grid-area:heading;
+}
+
+select{
+    height:1.5rem;
+}
+label{
+    line-height: 1.5rem;
+}
+
+/** FORM CSS **/
+
+/** VISUAL BLOCK CSS**/
+
+.visual-container{
+    flex:1;
+    flex-basis:0;
+    min-width:500px;
+    margin:10px;
+    border:2px inset orangered;
+    outline-offset: 2px;
+    counter-reset: flex-count;
+}
+.child-item{
+    min-height:150px;
+    min-width:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.child-item::before{
+    counter-increment: flex-count;
+    content:counter(flex-count);
+}
+.child-item-1{
+    background-color: lightcoral;
+}
+.child-item-2{
+    background-color: khaki;
+}
+.child-item-3{
+    background-color: tomato;
+}
+.child-item-4{
+    background-color: teal;
+}
+.child-item-5{
+    background-color: violet;
+}
+
+/** FLEX CSS**/
