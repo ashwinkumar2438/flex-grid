@@ -50,8 +50,9 @@ export default {
                         flex-direction:row;
                         flex-wrap:wrap;
                         align-items: center;
-                        justify-content: center;`,
-        childDefaults: `flex-basis:50px;
+                        justify-content: center;
+                        align-content:center`,
+        getChildDefaults:()=>`flex-basis:50px;
                         flex-grow:0;
                         flex-shrink:0;
                         order:0;
@@ -64,7 +65,7 @@ export default {
         parent:[
             {
                 property:'grid-template-columns',
-                values:['repeat(3,1fr)']
+                values:['repeat(3, 1fr)']
             },
             {
                 property:'grid-template-rows',
@@ -74,17 +75,20 @@ export default {
         children:[
             {
                 property:'grid-column-start',
-                values:[1,2,3,4,5]
+                values:[1,2,3]
             },
             {
                 property:'grid-column-end',
-                values:[1,2,3,4,5]
+                values:[1,2,3,4]
             }
         ],
         parentDefaults:`display:grid;
-                        grid-template-columns:repeat(3,1fr);
+                        grid-template-columns:repeat(3, 1fr);
                         grid-template-rows:1fr 1fr;
                         grid-template-areas:'myarea myarea';`,
-        childDefaults:``
+        getChildDefaults:(i)=>`
+                        grid-column-start:${i%3 + 1};
+                        grid-column-end:${i%3 + 2};
+                        `
     }
 }
