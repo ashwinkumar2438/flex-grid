@@ -52,7 +52,7 @@ export default {
                         align-items: center;
                         justify-content: center;
                         align-content:center`,
-        getChildDefaults:()=>`flex-basis:50px;
+        getChildDefaults:()=>`flex-basis:200px;
                         flex-grow:0;
                         flex-shrink:0;
                         order:0;

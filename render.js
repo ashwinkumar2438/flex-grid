@@ -41,7 +41,6 @@ export default class FormManager{
             let propvalue = this.parent.style.getPropertyValue(prop.property);
             let select = getEl(`[data-property=${camelCaser(prop.property)}]`,this.parentForm);
             select.value = propvalue;
-            console.log(propvalue);
         }    
     }
     updateChildForm(){
